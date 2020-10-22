@@ -26,19 +26,15 @@ latest_data = pd.read_csv(
 us_medical_data = pd.read_csv(
     'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/05-07-2020.csv')
 
-'''
 confirmed_df = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv')
 deaths_df = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv')
 recoveries_df = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv')
 latest_data = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/05-28-2020.csv')
 us_medical_data = pd.read_csv('https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports_us/05-28-2020.csv')
-'''
 
-'''
 latest_data.head()
 confirmed_df.head()
 us_medical_data.head()
-'''
 
 cols = confirmed_df.keys()
 
@@ -332,25 +328,6 @@ for i in dates:
                     recoveries_df[recoveries_df['Country/Region'] == 'Switzerland'][i].sum() + \
                     recoveries_df[recoveries_df['Country/Region'] == 'Turkey'][i].sum() + \
                     recoveries_df[recoveries_df['Country/Region'] == 'Slovakia'][i].sum()
-
-    # confirmed, deaths, recovered, and active
-
-    # world_cases.append(confirmed_sum)
-    # total_deaths.append(death_sum)
-    # total_recovered.append(recovered_sum)
-
-
-# total_active.append(confirmed_sum - death_sum - recovered_sum)
-
-# calculate mortality and recovery rates and ignoring the rates when confirmed cases =0
-
-# if (confirmed_sum != 0):
-#    mortality_rate.append(death_sum / confirmed_sum)
-#    recovery_rate.append(recovered_sum / confirmed_sum)
-# else:
-#   mortality_rate.append(0)
-#   recovery_rate.append(0)
-
 
 def daily_increase(data):
     d = []
